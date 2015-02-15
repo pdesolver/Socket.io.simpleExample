@@ -8,4 +8,8 @@ you will of course have to install all the dependancies by hand using cabal, sim
 cabal install snap-core
 for example, if ghc throws an error similar to "cant find module Snap.Core".
 
+it should also build and run if you run
+cabal run
+then navigate a browser to "localhost:8000"
+
 
