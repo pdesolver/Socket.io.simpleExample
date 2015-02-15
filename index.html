@@ -1,0 +1,24 @@
+<script type="text/javascript" src="/engine.io.js"></script>
+
+<script>
+  var socket = new eio.Socket("http://localhost:8000");
+
+  socket.on('open', function(){});
+  socket.on('close', function(){});
+  socket.on('message', function(msg){
+    document.getElementById('textbox2').value=msg;
+  });
+
+  function send() { 
+    var input = document.getElementById("textbox1").value;
+    var output =parseFloat(input);
+    socket.send(output);
+  } 
+</script>
+
+<html>
+    <title>Haskell to Javascript via socket.io</title>
+     <input type="text" name="textbox1" id="textbox1" />  
+     <input type="submit" name="button" id="button1" onclick="send()" value="*2=" />
+     <input type="text" name="textbox2" id="textbox2" readonly="true"/>
+</html>
